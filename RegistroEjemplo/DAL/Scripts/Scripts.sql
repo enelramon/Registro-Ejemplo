@@ -1,6 +1,6 @@
-﻿CREATE DATABASE RegistroPersona
+﻿CREATE DATABASE PersonasDb
 GO
-USE RegistroPersona
+USE PersonasDb
 GO
 CREATE TABLE Personas
 (

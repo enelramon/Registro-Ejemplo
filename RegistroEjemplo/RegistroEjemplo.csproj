@@ -51,28 +51,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\PersonaBLL.cs" />
-    <Compile Include="cPersonas.cs">
+    <Compile Include="BLL\PersonasBLL.cs" />
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="cPersonas.Designer.cs">
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Consultas\cPersonas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\cPersonas.Designer.cs">
       <DependentUpon>cPersonas.cs</DependentUpon>
     </Compile>
     <Compile Include="DAL\Contexto.cs" />
-    <Compile Include="Entidades\Persona.cs" />
-    <Compile Include="Registro.cs">
+    <Compile Include="Entidades\Personas.cs" />
+    <Compile Include="UI\Registros\rPersonas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registro.Designer.cs">
-      <DependentUpon>Registro.cs</DependentUpon>
+    <Compile Include="UI\Registros\rPersonas.Designer.cs">
+      <DependentUpon>rPersonas.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="cPersonas.resx">
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\cPersonas.resx">
       <DependentUpon>cPersonas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Registro.resx">
-      <DependentUpon>Registro.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Registros\rPersonas.resx">
+      <DependentUpon>rPersonas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -82,6 +91,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -98,7 +108,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Scripts\Scripts.sql" />
+    <Content Include="DAL\Scripts\Scripts.sql" />
+    <None Include="Resources\persona.png" />
+    <None Include="Resources\buscar.png" />
+    <None Include="Resources\guardar.png" />
+    <None Include="Resources\borrar.png" />
+    <None Include="Resources\nuevo.png" />
+    <None Include="Resources\impresora.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UI\Reportes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
