@@ -29,23 +29,30 @@ namespace RegistroEjemplo
             {                
                 case 0://ID
                     id = Convert.ToInt32(CriteriotextBox.Text);
-                    filtro = x => x.PersonaId == id;
+                    filtro = x => x.PersonaId == id 
+                    && (x.Fecha>= DesdedateTimePicker.Value && x.Fecha <= HastadateTimePicker.Value)  ;
                     break;                
                 case 1:// nombre
-                    filtro = x => x.Nombres.Equals(CriteriotextBox.Text);
+                    filtro = x => x.Nombres.Contains(CriteriotextBox.Text) 
+                    && (x.Fecha >= DesdedateTimePicker.Value && x.Fecha <= HastadateTimePicker.Value);
                     break;                
                 case 2:// cedula
-                    filtro = x => x.Cedula.Equals(CriteriotextBox.Text);
+                    filtro = x => x.Cedula.Equals(CriteriotextBox.Text) 
+                    && (x.Fecha >= DesdedateTimePicker.Value && x.Fecha <= HastadateTimePicker.Value);
                     break;                
                 case 3:// direccion
-                    filtro = x => x.Direccion.Equals(CriteriotextBox.Text);
+                    filtro = x => x.Direccion.Contains(CriteriotextBox.Text) 
+                    && (x.Fecha >= DesdedateTimePicker.Value && x.Fecha <= HastadateTimePicker.Value);
                     break;                
                 case 4://telefono
-                    filtro = x => x.Telefono.Equals(CriteriotextBox.Text);
+                    filtro = x => x.Telefono.Equals(CriteriotextBox.Text) 
+                    && (x.Fecha >= DesdedateTimePicker.Value && x.Fecha <= HastadateTimePicker.Value);
                     break;
             }
+             
 
             ConsultadataGridView.DataSource = BLL.PersonasBLL.GetList(filtro);
         }
+ 
     }
 }

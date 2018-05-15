@@ -11,16 +11,19 @@ using System.Windows.Forms;
 
 namespace RegistroEjemplo
 {
-    public partial class Registro : Form
+    public partial class rPersonas : Form
     {
-        public Registro()
+        public rPersonas()
         {
             InitializeComponent();
         }
        
+        //todo: aprender a insertar los objetos desde datasources
+        //todo: Poner taborder a los objetos
         private void NuevoButton_Click(object sender, EventArgs e)
         {
             IdnumericUpDown.Value = 0;
+            FechadateTimePicker.Value = DateTime.Now;
             NombretextBox.Clear();
             CedulamaskedTextBox.Clear();
             DirecciontextBox.Clear();
@@ -29,11 +32,15 @@ namespace RegistroEjemplo
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            Personas persona = LlenaClase();
+            Personas persona;
             bool Paso = false;
 
+            //todo: llamar la validacion.
+
+            persona = LlenaClase();
+
             //Determinar si es Guardar o Modificar
-            if(IdnumericUpDown.Value ==0)
+            if (IdnumericUpDown.Value ==0)
                 Paso = BLL.PersonasBLL.Guardar(persona) ; 
             else
                 Paso =BLL.PersonasBLL.Modificar(LlenaClase()) ;                 
@@ -65,6 +72,7 @@ namespace RegistroEjemplo
 
             if (persona != null)
             {
+                FechadateTimePicker.Value = persona.Fecha;
                 NombretextBox.Text = persona.Nombres;
                 CedulamaskedTextBox.Text = persona.Cedula;
                 DirecciontextBox.Text = persona.Direccion;
@@ -80,12 +88,29 @@ namespace RegistroEjemplo
             Personas persona = new Personas();
 
             persona.PersonaId = Convert.ToInt32(IdnumericUpDown.Value);
+            persona.Fecha = FechadateTimePicker.Value;
             persona.Nombres = NombretextBox.Text;
             persona.Cedula = CedulamaskedTextBox.Text;
             persona.Direccion = DirecciontextBox.Text;
             persona.Telefono = TelefonomaskedTextBox.Text;
 
             return persona;
+        }
+
+        private bool Validar()
+        {
+            bool HayErrores = false;
+            //todo: quitar los mensajes de los errores que ya no estan.
+
+            if (String.IsNullOrWhiteSpace(TelefonomaskedTextBox.Text))
+            {
+                MyerrorProvider.SetError(TelefonomaskedTextBox,
+                    "No debes dejar el nombre vacio");
+                HayErrores = true;
+            }
+
+            //todo: validar demas campos
+            return HayErrores;
         }
     }
 }
