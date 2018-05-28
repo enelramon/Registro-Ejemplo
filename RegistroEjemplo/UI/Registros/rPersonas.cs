@@ -101,7 +101,7 @@ namespace RegistroEjemplo
         {
             bool HayErrores = false;
             //todo: quitar los mensajes de los errores que ya no estan.
-
+            
             if (String.IsNullOrWhiteSpace(TelefonomaskedTextBox.Text))
             {
                 MyerrorProvider.SetError(TelefonomaskedTextBox,

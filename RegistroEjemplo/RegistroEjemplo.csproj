@@ -55,6 +55,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\PersonasBLL.cs" />
+    <Compile Include="DAL\IRepository.cs" />
+    <Compile Include="DAL\Repositorio.cs" />
+    <Compile Include="Entidades\EstadosCiviles.cs" />
+    <Compile Include="Entidades\TiposClientes.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +124,7 @@
     <None Include="Resources\impresora.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
     <Folder Include="UI\Reportes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -53,7 +53,7 @@
             this.ayudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(574, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(672, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -104,7 +104,7 @@
             // personasToolStripMenuItem1
             // 
             this.personasToolStripMenuItem1.Name = "personasToolStripMenuItem1";
-            this.personasToolStripMenuItem1.Size = new System.Drawing.Size(216, 26);
+            this.personasToolStripMenuItem1.Size = new System.Drawing.Size(141, 26);
             this.personasToolStripMenuItem1.Text = "Personas";
             this.personasToolStripMenuItem1.Click += new System.EventHandler(this.personasToolStripMenuItem1_Click);
             // 
@@ -121,7 +121,7 @@
             this.PersonastoolStripButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 28);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(574, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(672, 27);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -138,7 +138,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(574, 485);
+            this.ClientSize = new System.Drawing.Size(672, 535);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
