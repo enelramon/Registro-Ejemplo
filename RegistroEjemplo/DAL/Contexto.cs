@@ -9,6 +9,9 @@ namespace RegistroEjemplo.DAL
         public DbSet<Personas> Personas { get; set; }
         public DbSet<TiposClientes> TiposClientes { get; set; }
         public DbSet<EstadosCiviles> EstadosCiviles { get; set; }
+        public DbSet<Ciudades> Ciudades { get; set; }
+
+
 
         // base("ConStr") para pasar la conexion a la clase base de EntityFramework 
         public Contexto() : base("ConStr")

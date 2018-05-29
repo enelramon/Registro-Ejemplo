@@ -28,14 +28,19 @@ namespace RegistroEjemplo
             CedulamaskedTextBox.Clear();
             DirecciontextBox.Clear();
             TelefonomaskedTextBox.Clear();
+            MyerrorProvider.Clear();
         }
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
             Personas persona;
             bool Paso = false;
-
-            //todo: llamar la validacion.
+             
+            if (!Validar()) { 
+                MessageBox.Show("Favor revisar todos los campos", "Validación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             persona = LlenaClase();
 
@@ -43,7 +48,7 @@ namespace RegistroEjemplo
             if (IdnumericUpDown.Value ==0)
                 Paso = BLL.PersonasBLL.Guardar(persona) ; 
             else
-                Paso =BLL.PersonasBLL.Modificar(LlenaClase()) ;                 
+                Paso =BLL.PersonasBLL.Modificar(persona) ;                 
            
             //Informar el resultado
             if (Paso )

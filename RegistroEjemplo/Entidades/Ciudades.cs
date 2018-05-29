@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace RegistroEjemplo.Entidades
 {
-    public class EstadosCiviles
+    public class Ciudades
     {
         [Key]
-        public int EstadoId { get; set; }
-        public string Descripcion { get; set; }
+        public int CiudadId { get; set; }
+        public string Nombre { get; set; }
 
-        public EstadosCiviles()
+        public Ciudades()
         {
 
         }

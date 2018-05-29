@@ -57,6 +57,7 @@
     <Compile Include="BLL\PersonasBLL.cs" />
     <Compile Include="DAL\IRepository.cs" />
     <Compile Include="DAL\Repositorio.cs" />
+    <Compile Include="Entidades\Ciudades.cs" />
     <Compile Include="Entidades\EstadosCiviles.cs" />
     <Compile Include="Entidades\TiposClientes.cs" />
     <Compile Include="MainForm.cs">
@@ -73,6 +74,12 @@
     </Compile>
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Personas.cs" />
+    <Compile Include="UI\Registros\rCiudades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\rCiudades.Designer.cs">
+      <DependentUpon>rCiudades.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\rPersonas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Consultas\cPersonas.resx">
       <DependentUpon>cPersonas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\rCiudades.resx">
+      <DependentUpon>rCiudades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\rPersonas.resx">
       <DependentUpon>rPersonas.cs</DependentUpon>
@@ -101,6 +111,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\RegistroEjemplo.Entidades.Ciudades.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -124,7 +135,6 @@
     <None Include="Resources\impresora.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Properties\DataSources\" />
     <Folder Include="UI\Reportes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

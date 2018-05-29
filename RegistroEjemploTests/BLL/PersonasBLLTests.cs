@@ -27,9 +27,17 @@ namespace RegistroEjemplo.BLL.Tests
         }
 
         [TestMethod()]
-        public void ModificarTest()
+        public void GuardarCiudadTest()
         {
-            Assert.Fail();
+            Repositorio<Ciudades> repositorio = new Repositorio<Ciudades>(new Contexto());
+
+            Ciudades ciudad = new Ciudades();
+
+            ciudad.Nombre = "SFM";
+
+            bool paso =repositorio.Guardar(ciudad);
+
+            Assert.IsTrue(paso);
         }
 
         [TestMethod()]
