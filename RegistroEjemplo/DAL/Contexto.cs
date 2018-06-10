@@ -5,16 +5,23 @@ namespace RegistroEjemplo.DAL
 {
     // Aqui agregamos public tambien, para que la clase pueda ser encontrada en cualquier parte del proyecto, 
     //y heredamos de  DbContext para que EntityFramework pueda hacer su magia
-    public class Contexto : DbContext    {
+    public class Contexto : DbContext
+    {
+        public DbSet<Ciudades> Ciudades { get; set; }
+        public DbSet<Visitas> Visitas { get; set; }
+
         public DbSet<Personas> Personas { get; set; }
         public DbSet<TiposClientes> TiposClientes { get; set; }
         public DbSet<EstadosCiviles> EstadosCiviles { get; set; }
-        public DbSet<Ciudades> Ciudades { get; set; }
-
-
-
         // base("ConStr") para pasar la conexion a la clase base de EntityFramework 
         public Contexto() : base("ConStr")
-        {       }
+        { }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
+
+
     }
 }

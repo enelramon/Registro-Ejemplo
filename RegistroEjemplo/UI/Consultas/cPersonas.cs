@@ -53,6 +53,10 @@ namespace RegistroEjemplo
 
             ConsultadataGridView.DataSource = BLL.PersonasBLL.GetList(filtro);
         }
- 
+
+        private void Imprimirbutton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

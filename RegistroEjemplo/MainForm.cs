@@ -1,4 +1,6 @@
 ﻿
+using RegistroEjemplo.UI.Consultas;
+using RegistroEjemplo.UI.Registros;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,6 +41,25 @@ namespace RegistroEjemplo
         private void personasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             cPersonas consulta = new cPersonas();
+            consulta.MdiParent = this;
+            consulta.Show();
+        }
+
+        private void visitasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rVisitas registro = new rVisitas();
+            registro.MdiParent = this;
+            registro.Show();
+        }
+
+        private void VisitatoolStripButton_Click(object sender, EventArgs e)
+        {
+            visitasToolStripMenuItem_Click(sender, e);
+        }
+
+        private void visitasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            cVisitas consulta = new cVisitas();
             consulta.MdiParent = this;
             consulta.Show();
         }

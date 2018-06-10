@@ -48,6 +48,7 @@ namespace RegistroEjemplo
             if (IdnumericUpDown.Value ==0)
                 Paso = BLL.PersonasBLL.Guardar(persona) ; 
             else
+                //todo: validar que exista.
                 Paso =BLL.PersonasBLL.Modificar(persona) ;                 
            
             //Informar el resultado
@@ -63,6 +64,7 @@ namespace RegistroEjemplo
         {
             int id = Convert.ToInt32(IdnumericUpDown.Value);
 
+            //todo: validar que exista
             if (BLL.PersonasBLL.Eliminar(id))
                 MessageBox.Show("Eliminado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
@@ -107,6 +109,7 @@ namespace RegistroEjemplo
             bool HayErrores = false;
             //todo: quitar los mensajes de los errores que ya no estan.
             
+            //todo: Validar que el nombre no se duplique
             if (String.IsNullOrWhiteSpace(TelefonomaskedTextBox.Text))
             {
                 MyerrorProvider.SetError(TelefonomaskedTextBox,

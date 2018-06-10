@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 
 namespace RegistroEjemplo.DAL
 {
-    public class Repositorio<T> : IRepository<T> where T:class
+    public class Repositorio<T> :IDisposable, IRepository<T> where T:class
     {
         internal Contexto _contexto;
 
@@ -31,8 +31,6 @@ namespace RegistroEjemplo.DAL
                     _contexto.SaveChanges(); //Guardar los cambios
                     paso = true;
                 }
-
-                _contexto.Dispose();//siempre hay que cerrar la conexion
             }
             catch (Exception)
             {
@@ -56,8 +54,6 @@ namespace RegistroEjemplo.DAL
                 {
                     paso = true;
                 }
-                _contexto.Dispose(); 
-
             }
             catch (Exception)
             {
@@ -104,7 +100,6 @@ namespace RegistroEjemplo.DAL
             try
             {
                 entity = _contexto.Set<T>().Find(id);
-                _contexto.Dispose();
             }
             catch (Exception)
             {
@@ -124,13 +119,17 @@ namespace RegistroEjemplo.DAL
             try
             {
                 Lista = _contexto.Set<T>().Where(expression).ToList();
-                _contexto.Dispose();
             }
             catch (Exception)
             {
                 throw;
             }
             return Lista;
-        }      
+        }
+
+        public void Dispose()
+        {
+            _contexto.Dispose();
+        }
     }
 }

@@ -63,6 +63,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="BLL\PersonasBLLTests.cs" />
+    <Compile Include="BLL\CiudadesTest.cs" />
+    <Compile Include="BLL\VistasTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

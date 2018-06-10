@@ -17,5 +17,12 @@ namespace RegistroEjemplo.Entidades
         {
 
         }
+
+        //Este truco permitira que se vea el nombre 
+        //de la ciudad en el grid.
+        public override string ToString()
+        {
+            return this.Nombre;
+        }
     }
 }

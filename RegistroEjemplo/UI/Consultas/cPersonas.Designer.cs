@@ -33,15 +33,15 @@
             this.filtrarcomboBox = new System.Windows.Forms.ComboBox();
             this.CriteriotextBox = new System.Windows.Forms.TextBox();
             this.ConsultadataGridView = new System.Windows.Forms.DataGridView();
-            this.Buscarbutton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Imprimirbutton = new System.Windows.Forms.Button();
             this.DesdedateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.HastadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.Fechaspanel = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.Imprimirbutton = new System.Windows.Forms.Button();
+            this.Buscarbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.Fechaspanel.SuspendLayout();
@@ -109,20 +109,6 @@
             this.ConsultadataGridView.Size = new System.Drawing.Size(876, 374);
             this.ConsultadataGridView.TabIndex = 4;
             // 
-            // Buscarbutton
-            // 
-            this.Buscarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Buscarbutton.Image = global::RegistroEjemplo.Properties.Resources.buscar;
-            this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscarbutton.Location = new System.Drawing.Point(748, 15);
-            this.Buscarbutton.Margin = new System.Windows.Forms.Padding(4);
-            this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(140, 51);
-            this.Buscarbutton.TabIndex = 5;
-            this.Buscarbutton.Text = "Buscar";
-            this.Buscarbutton.UseVisualStyleBackColor = true;
-            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -136,19 +122,6 @@
             this.groupBox1.Size = new System.Drawing.Size(727, 51);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
-            // 
-            // Imprimirbutton
-            // 
-            this.Imprimirbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Imprimirbutton.Image = global::RegistroEjemplo.Properties.Resources.impresora;
-            this.Imprimirbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Imprimirbutton.Location = new System.Drawing.Point(12, 503);
-            this.Imprimirbutton.Margin = new System.Windows.Forms.Padding(4);
-            this.Imprimirbutton.Name = "Imprimirbutton";
-            this.Imprimirbutton.Size = new System.Drawing.Size(140, 51);
-            this.Imprimirbutton.TabIndex = 7;
-            this.Imprimirbutton.Text = "Imprimir";
-            this.Imprimirbutton.UseVisualStyleBackColor = true;
             // 
             // DesdedateTimePicker
             // 
@@ -209,6 +182,34 @@
             this.label4.Size = new System.Drawing.Size(207, 17);
             this.label4.TabIndex = 21;
             this.label4.Text = "Filtrar usando Rango de fechas";
+            // 
+            // Imprimirbutton
+            // 
+            this.Imprimirbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Imprimirbutton.Image = global::RegistroEjemplo.Properties.Resources.impresora;
+            this.Imprimirbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Imprimirbutton.Location = new System.Drawing.Point(12, 503);
+            this.Imprimirbutton.Margin = new System.Windows.Forms.Padding(4);
+            this.Imprimirbutton.Name = "Imprimirbutton";
+            this.Imprimirbutton.Size = new System.Drawing.Size(140, 51);
+            this.Imprimirbutton.TabIndex = 7;
+            this.Imprimirbutton.Text = "Imprimir";
+            this.Imprimirbutton.UseVisualStyleBackColor = true;
+            this.Imprimirbutton.Click += new System.EventHandler(this.Imprimirbutton_Click);
+            // 
+            // Buscarbutton
+            // 
+            this.Buscarbutton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Buscarbutton.Image = global::RegistroEjemplo.Properties.Resources.buscar;
+            this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Buscarbutton.Location = new System.Drawing.Point(748, 15);
+            this.Buscarbutton.Margin = new System.Windows.Forms.Padding(4);
+            this.Buscarbutton.Name = "Buscarbutton";
+            this.Buscarbutton.Size = new System.Drawing.Size(140, 51);
+            this.Buscarbutton.TabIndex = 5;
+            this.Buscarbutton.Text = "Buscar";
+            this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // cPersonas
             // 

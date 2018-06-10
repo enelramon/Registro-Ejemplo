@@ -12,6 +12,7 @@ namespace RegistroEjemplo.Entidades{
         public string Telefono { get; set; }
         public string Direccion { get; set; }
 
+
    
         //todo: aprender a crear las propiedades de la forma corta.
         public Personas()        {
