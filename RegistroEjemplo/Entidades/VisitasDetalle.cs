@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RegistroEjemplo.Entidades
@@ -6,8 +7,12 @@ namespace RegistroEjemplo.Entidades
     public class VisitasDetalle
     {
         [Key]
+        [Browsable(false)]
         public int Id { get; set; }
+
+        [Browsable(false)]
         public int VisitaId { get; set; }
+
         public int CiudadId { get; set; }   
         
         [ForeignKey("CiudadId")]

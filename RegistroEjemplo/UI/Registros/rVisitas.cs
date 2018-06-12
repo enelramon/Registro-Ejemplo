@@ -113,6 +113,7 @@ namespace RegistroEjemplo.UI.Registros
         private void LlenarComboBox()
         {
             Repositorio<Ciudades> repositorio = new Repositorio<Ciudades>(new Contexto());
+
             CiudadcomboBox.DataSource = repositorio.GetList(c => true);
             CiudadcomboBox.ValueMember = "CiudadId";
             CiudadcomboBox.DisplayMember = "Nombre";
@@ -129,7 +130,7 @@ namespace RegistroEjemplo.UI.Registros
             //Agregar cada linea del Grid al detalle
             foreach (DataGridViewRow item in detalleDataGridView.Rows)
             {
-                visita.AgregarDetalle(
+                           visita.AgregarDetalle(
                     ToInt(item.Cells["Id"].Value),
                     ToInt(item.Cells["VisitaId"].Value),
                     ToInt(item.Cells["CiudadId"].Value),
@@ -149,8 +150,8 @@ namespace RegistroEjemplo.UI.Registros
             detalleDataGridView.DataSource = visita.Detalle;
 
             //Ocultar columnas
-            detalleDataGridView.Columns["Id"].Visible = false;
-            detalleDataGridView.Columns["CiudadId"].Visible = false;
+            //detalleDataGridView.Columns["Id"].Visible = false;
+            //detalleDataGridView.Columns["CiudadId"].Visible = false;
         }
         private void Removerbutton_Click(object sender, EventArgs e)
         {

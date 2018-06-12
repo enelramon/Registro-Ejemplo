@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace RegistroEjemplo.Entidades
@@ -17,6 +18,7 @@ namespace RegistroEjemplo.Entidades
         le colocamos virtual para usar el LazyLoading
         LazyLoading consiste en retrasar la carga de un objeto
         hasta el mismo momento de su utilización. */
+        [Browsable(false)]
         public virtual ICollection<VisitasDetalle> Detalle { get; set; }
 
         public Visitas()
