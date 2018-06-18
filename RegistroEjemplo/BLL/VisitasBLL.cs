@@ -52,6 +52,15 @@ namespace RegistroEjemplo.BLL
             try
             {
                 //todo: buscar las entidades que no estan para removerlas
+                var visitaant = VisitasBLL.Buscar(visita.VisitaId);
+                foreach (var item in visitaant.Detalle)//recorrer el detalle aterior
+                {
+                    //determinar si el item no esta en el detalle actual
+                    if (!visita.Detalle.ToList().Exists(v => v.Id == item.Id))
+                    {
+                        contexto.Entry(item).State = EntityState.Deleted;
+                    }
+                }
 
                 //recorrer el detalle
                 foreach (var item in visita.Detalle)

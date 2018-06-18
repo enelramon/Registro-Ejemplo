@@ -16,7 +16,7 @@ namespace RegistroEjemplo.BLL.Tests
         [TestMethod()]
         public void GuardarTest()
         {
-            Repositorio<EstadosCiviles> repositorio = new Repositorio<EstadosCiviles>(new Contexto());
+            RepositorioBase<EstadosCiviles> repositorio = new RepositorioBase<EstadosCiviles>(new Contexto());
 
             EstadosCiviles estadosCiviles = new EstadosCiviles
             {
@@ -29,7 +29,7 @@ namespace RegistroEjemplo.BLL.Tests
         [TestMethod()]
         public void GuardarCiudadTest()
         {
-            Repositorio<Ciudades> repositorio = new Repositorio<Ciudades>(new Contexto());
+            RepositorioBase<Ciudades> repositorio = new RepositorioBase<Ciudades>(new Contexto());
 
             Ciudades ciudad = new Ciudades();
 

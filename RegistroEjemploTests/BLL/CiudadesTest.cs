@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using RegistroEjemplo.BLL;
 using RegistroEjemplo.DAL;
 using RegistroEjemplo.Entidades;
 
@@ -13,7 +14,7 @@ namespace RegistroEjemploTests.BLL
         {
             bool paso;
             Contexto contexto = new Contexto();
-            Repositorio<Ciudades> repositorio = new Repositorio<Ciudades>( contexto);
+            RepositorioBase<Ciudades> repositorio = new RepositorioBase<Ciudades>( contexto);
             
             repositorio.Guardar(new Ciudades { Nombre = "SFM" });
             paso=repositorio.Guardar(new Ciudades { Nombre = "SANTIAGO" });

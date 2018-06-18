@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace RegistroEjemplo.DAL
+namespace RegistroEjemplo.BLL
 {
     //where T : class, significa que T sera un clase, no un tipo de datos
     public interface IRepository<T> where T : class

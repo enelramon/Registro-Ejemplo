@@ -56,8 +56,9 @@
   <ItemGroup>
     <Compile Include="BLL\PersonasBLL.cs" />
     <Compile Include="BLL\VisitasBLL.cs" />
-    <Compile Include="DAL\IRepository.cs" />
-    <Compile Include="DAL\Repositorio.cs" />
+    <Compile Include="BLL\IRepository.cs" />
+    <Compile Include="BLL\RepositorioBase.cs" />
+    <Compile Include="BLL\VistasRepositorio.cs" />
     <Compile Include="Entidades\Ciudades.cs" />
     <Compile Include="Entidades\EstadosCiviles.cs" />
     <Compile Include="Entidades\TiposClientes.cs" />

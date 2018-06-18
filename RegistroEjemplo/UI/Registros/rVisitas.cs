@@ -1,4 +1,5 @@
-﻿using RegistroEjemplo.DAL;
+﻿using RegistroEjemplo.BLL;
+using RegistroEjemplo.DAL;
 using RegistroEjemplo.Entidades;
 using System;
 using System.Collections.Generic;
@@ -112,7 +113,7 @@ namespace RegistroEjemplo.UI.Registros
 
         private void LlenarComboBox()
         {
-            Repositorio<Ciudades> repositorio = new Repositorio<Ciudades>(new Contexto());
+            RepositorioBase<Ciudades> repositorio = new RepositorioBase<Ciudades>(new Contexto());
 
             CiudadcomboBox.DataSource = repositorio.GetList(c => true);
             CiudadcomboBox.ValueMember = "CiudadId";
@@ -150,8 +151,8 @@ namespace RegistroEjemplo.UI.Registros
             detalleDataGridView.DataSource = visita.Detalle;
 
             //Ocultar columnas
-            //detalleDataGridView.Columns["Id"].Visible = false;
-            //detalleDataGridView.Columns["CiudadId"].Visible = false;
+            detalleDataGridView.Columns["Id"].Visible = false;
+            detalleDataGridView.Columns["CiudadId"].Visible = false;
         }
         private void Removerbutton_Click(object sender, EventArgs e)
         {

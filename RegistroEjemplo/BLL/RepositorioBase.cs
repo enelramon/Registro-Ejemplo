@@ -1,16 +1,17 @@
-﻿using System;
+﻿using RegistroEjemplo.DAL;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace RegistroEjemplo.DAL
+namespace RegistroEjemplo.BLL
 {
-    public class Repositorio<T> :IDisposable, IRepository<T> where T:class
+    public class RepositorioBase<T> :IDisposable, IRepository<T> where T:class
     {
-        internal Contexto _contexto;
+        internal  Contexto _contexto;
 
-        public Repositorio(Contexto contexto)
+        public RepositorioBase(Contexto contexto)
         {
             _contexto = contexto;
         }
@@ -44,7 +45,7 @@ namespace RegistroEjemplo.DAL
         /// </summary>
         /// <param name="entity">Una instancia de la entidad a guardar</param>
         /// <returns>Retorna True si Modifico o Falso si falló </returns>
-        public bool Modificar(T entity)
+        public virtual bool Modificar(T entity)
         {
             bool paso = false; 
             try
@@ -94,7 +95,7 @@ namespace RegistroEjemplo.DAL
         /// </summary>
         ///<param name="id">El Id de la entidad que se desea encontrar </param>
         /// <returns>Retorna la persona encontrada </returns>
-        public T Buscar(int id)
+        public virtual T Buscar(int id)
         { 
             T entity  ;
             try
