@@ -63,5 +63,12 @@ namespace RegistroEjemplo
             consulta.MdiParent = this;
             consulta.Show();
         }
+
+        private void ciudadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rCiudades rCiudades = new rCiudades();
+            rCiudades.MdiParent = this;
+            rCiudades.Show();
+        }
     }
 }

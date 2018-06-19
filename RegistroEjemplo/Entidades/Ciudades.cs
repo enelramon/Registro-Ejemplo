@@ -12,6 +12,8 @@ namespace RegistroEjemplo.Entidades
         [Key]
         public int CiudadId { get; set; }
         public string Nombre { get; set; }
+        public int CantidadVisitas { get; set; }
+
 
         public Ciudades()
         {        }

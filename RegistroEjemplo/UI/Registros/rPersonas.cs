@@ -36,7 +36,7 @@ namespace RegistroEjemplo
             Personas persona;
             bool Paso = false;
              
-            if (!Validar()) { 
+            if (HayErrores()) { 
                 MessageBox.Show("Favor revisar todos los campos", "Validación",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -104,7 +104,7 @@ namespace RegistroEjemplo
             return persona;
         }
 
-        private bool Validar()
+        private bool HayErrores()
         {
             bool HayErrores = false;
             //todo: quitar los mensajes de los errores que ya no estan.

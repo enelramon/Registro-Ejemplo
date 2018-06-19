@@ -16,8 +16,8 @@ namespace RegistroEjemploTests.BLL
             Contexto contexto = new Contexto();
             RepositorioBase<Ciudades> repositorio = new RepositorioBase<Ciudades>( contexto);
             
-            repositorio.Guardar(new Ciudades { Nombre = "SFM" });
-            paso=repositorio.Guardar(new Ciudades { Nombre = "SANTIAGO" });
+            repositorio.Guardar(new Ciudades { Nombre = "SFM",CantidadVisitas=0 });
+            paso=repositorio.Guardar(new Ciudades { Nombre = "SANTIAGO", CantidadVisitas = 0 });
 
             repositorio.Dispose();
 

@@ -27,6 +27,11 @@ namespace RegistroEjemplo.BLL
             {
                 if (contexto.Visitas.Add(visita) != null)
                 {
+                    foreach (var item in visita.Detalle)
+                    {
+                        contexto.Ciudades.Find(item.CiudadId).CantidadVisitas += item.Cantidad;
+                    }
+
                     contexto.SaveChanges(); //Guardar los cambios
                     paso = true;
                 }
@@ -53,11 +58,17 @@ namespace RegistroEjemplo.BLL
             {
                 //todo: buscar las entidades que no estan para removerlas
                 var visitaant = VisitasBLL.Buscar(visita.VisitaId);
+                
                 foreach (var item in visitaant.Detalle)//recorrer el detalle aterior
                 {
+                    //restar todas las visitas
+                     contexto.Ciudades.Find(item.CiudadId).CantidadVisitas -= item.Cantidad;
+
                     //determinar si el item no esta en el detalle actual
                     if (!visita.Detalle.ToList().Exists(v => v.Id == item.Id))
                     {
+                        contexto.Ciudades.Find(item.CiudadId).CantidadVisitas -= item.Cantidad;
+                         item.Ciudad  = null; //quitar la ciudad para que EF no intente hacerle nada
                         contexto.Entry(item).State = EntityState.Deleted;
                     }
                 }
@@ -65,11 +76,14 @@ namespace RegistroEjemplo.BLL
                 //recorrer el detalle
                 foreach (var item in visita.Detalle)
                 {
+                    //Sumar todas las visitas
+                    contexto.Ciudades.Find(item.CiudadId).CantidadVisitas += item.Cantidad;
+
                     //Muy importante indicar que pasara con la entidad del detalle
                     var estado = item.Id > 0 ? EntityState.Modified : EntityState.Added;
                     contexto.Entry(item).State = estado;
                 }
-
+                
                 //Idicar que se esta modificando el encabezado
                 contexto.Entry(visita).State = EntityState.Modified;
 
@@ -100,6 +114,12 @@ namespace RegistroEjemplo.BLL
             {
                 Visitas visita = contexto.Visitas.Find(id);
 
+                foreach (var item in visita.Detalle)
+                {
+                    var ciudad = contexto.Ciudades.Find(item.CiudadId);
+                    ciudad.CantidadVisitas -= item.Cantidad;
+                }
+
                 contexto.Visitas.Remove(visita);
 
                 if (contexto.SaveChanges() > 0)
@@ -128,6 +148,7 @@ namespace RegistroEjemplo.BLL
             try
             {
                 visita = contexto.Visitas.Find(id);
+                if (visita != null) { 
                 //Cargar la lista en este punto porque
                 //luego de hacer Dispose() el Contexto 
                 //no sera posible leer la lista
@@ -139,7 +160,7 @@ namespace RegistroEjemplo.BLL
                     //forzando la ciudad a cargarse
                     string s = item.Ciudad.Nombre;
                 }
-
+}
                 contexto.Dispose();
             }
             catch (Exception)

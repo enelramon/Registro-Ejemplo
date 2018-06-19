@@ -38,5 +38,10 @@ namespace RegistroEjemplo.Entidades
 
             //todo crear la instancia de this.Ciudad
         }
+
+        public override string ToString()
+        {
+            return "Ciudad: " + this.CiudadId.ToString() + " Cantidad: " + this.Cantidad;
+        }
     }
 }
