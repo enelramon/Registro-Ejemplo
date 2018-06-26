@@ -87,7 +87,7 @@ namespace RegistroEjemplo.UI.Registros
             else
                 MessageBox.Show("No se pudo eliminar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-  
+
         private void Agregarbutton_Click(object sender, EventArgs e)
         {
             List<VisitasDetalle> detalle = new List<VisitasDetalle>();
@@ -131,12 +131,12 @@ namespace RegistroEjemplo.UI.Registros
             //Agregar cada linea del Grid al detalle
             foreach (DataGridViewRow item in detalleDataGridView.Rows)
             {
-                           visita.AgregarDetalle(
-                    ToInt(item.Cells["Id"].Value),
-                    ToInt(item.Cells["VisitaId"].Value),
-                    ToInt(item.Cells["CiudadId"].Value),
-                    ToInt(item.Cells["Cantidad"].Value)
-                  );
+                visita.AgregarDetalle(
+                         ToInt(item.Cells["Id"].Value),
+                         ToInt(item.Cells["VisitaId"].Value),
+                         ToInt(item.Cells["CiudadId"].Value),
+                         ToInt(item.Cells["Cantidad"].Value)
+                       );
             }
             return visita;
         }
@@ -156,12 +156,10 @@ namespace RegistroEjemplo.UI.Registros
         }
         private void Removerbutton_Click(object sender, EventArgs e)
         {
-            if (detalleDataGridView.Rows.Count > 0 
-                && detalleDataGridView.CurrentRow != null)
+            if (detalleDataGridView.Rows.Count > 0 && detalleDataGridView.CurrentRow != null)
             {
                 //convertir el grid en la lista
-                List<VisitasDetalle> detalle 
-                    = (List<VisitasDetalle>)detalleDataGridView.DataSource;
+                List<VisitasDetalle> detalle = (List<VisitasDetalle>)detalleDataGridView.DataSource;
 
                 //remover la fila
                 detalle.RemoveAt(detalleDataGridView.CurrentRow.Index);
@@ -202,6 +200,6 @@ namespace RegistroEjemplo.UI.Registros
             return retorno;
         }
 
-       
+
     }
 }

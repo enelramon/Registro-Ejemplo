@@ -34,8 +34,11 @@ namespace RegistroEjemploTests.BLL
 
             Visitas visita = VisitasBLL.Buscar(idVisita);
 
+            visita.Detalle.Remove(visita.Detalle[0]);
+
             //agregtar otro
             visita.Detalle.Add(new VisitasDetalle(0,visita.VisitaId, 2, 4));
+
 
             bool paso = VisitasBLL.Modificar(visita);
             Assert.AreEqual(true, paso);

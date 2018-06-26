@@ -19,7 +19,7 @@ namespace RegistroEjemplo.Entidades
         LazyLoading consiste en retrasar la carga de un objeto
         hasta el mismo momento de su utilización. */
         [Browsable(false)]
-        public virtual ICollection<VisitasDetalle> Detalle { get; set; }
+        public virtual List<VisitasDetalle> Detalle { get; set; }
 
         public Visitas()
         {
