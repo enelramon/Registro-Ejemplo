@@ -1,4 +1,5 @@
 ﻿using RegistroEjemplo.Entidades;
+using RegistroEjemplo.UI.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,8 @@ namespace RegistroEjemplo
 {
     public partial class cPersonas : Form
     {
+        private List<Personas> ListaPersonas;
+
         public cPersonas()
         {
             InitializeComponent();
@@ -49,14 +52,21 @@ namespace RegistroEjemplo
                     && (x.Fecha >= DesdedateTimePicker.Value && x.Fecha <= HastadateTimePicker.Value);
                     break;
             }
-             
 
-            ConsultadataGridView.DataSource = BLL.PersonasBLL.GetList(filtro);
+            ListaPersonas = BLL.PersonasBLL.GetList(filtro);
+            ConsultadataGridView.DataSource = ListaPersonas;
         }
 
         private void Imprimirbutton_Click(object sender, EventArgs e)
         {
+            if (ListaPersonas.Count==0)
+            {
+                MessageBox.Show("No hay datos para imprimir");
+                return;
+            }
 
+            PersonasReportViewer personasReportViewer = new PersonasReportViewer(ListaPersonas);
+            personasReportViewer.ShowDialog();
         }
     }
 }
